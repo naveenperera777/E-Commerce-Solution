@@ -86,7 +86,7 @@
                     <a href="https://laravel.com/docs">Officeware</a>
                     <a href="https://laracasts.com">Casualware</a>
                     <a href="https://laravel-news.com">Partyware</a>
-                    <a href="https://forge.laravel.com">Custom-Made</a>
+                    <a href="https://forge.laravel.com">Nouvelle</a>
 
                 </div>
             </div>
