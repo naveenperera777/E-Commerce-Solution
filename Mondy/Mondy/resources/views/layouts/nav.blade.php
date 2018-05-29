@@ -1,44 +1,61 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="{{ url('/') }}">Mondy</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggle-navbar"
-            aria-controls="toggle-navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <!-- <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'MOndy') }}
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
 
-    <div class="collapse navbar-collapse" id="toggle-navbar">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="">Dashboard</a>
-                </li>
+                     <li class="nav-item">
+                    <a class="nav-link" href="">Home</a>
+                   </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="">My Courses</a>
+                        <a class="nav-link" href="">About Us</a>
                     </li>
 
-
-        </ul>
-
-        <div class="my-2 my-lg-0">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                @guest
-                    <li class="nav-item"><a class="nav-link" href="">{{ __('Login') }}</a></li>
-                    {{--<li class="nav-item"><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>--}}
-                @else
                     <li class="nav-item">
-                        <a class="nav-link" href=""
-                           onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-                        <form id="logout-form" action="" method="POST"
-                              style="display: none;">
-                            @csrf
-                        </form>
+                        <a class="nav-link" href="">Products</a>
                     </li>
-                @endguest
-            </ul>
-        </div>
-    </div>
-</nav>
 
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Contact Us</a>
+                    </li>
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+                <!-- </div> -->
+            </div>
+        </nav>
