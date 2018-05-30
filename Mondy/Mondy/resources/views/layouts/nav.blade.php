@@ -1,12 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<a href="#" class="navbar-left"><img src="C:\Users\ASUS\Desktop\E-Commerce-Solution\Mondy\Mondy\storage\app\public\blur_edges.jpg"></a>
+
+<!-- <a class="navbar-brand" href="#"><img src="C:\Users\ASUS\Desktop\E-Commerce-Solution\Mondy\Mondy\storage\app\public\blur_edges.jpg"><small>Mondy</small></a> -->
             <div class="container">
                 <!-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'MOndy') }}
-                </a>
+                </a> ! -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button> -->
-
+                </button>
+               
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
