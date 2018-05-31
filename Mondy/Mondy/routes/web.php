@@ -20,3 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@home')->name('home'); 
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 // Route::get( '/dashboard', 'HomeController@dashboard' )->name( 'dashboard' );
+
+
+/**Administrator Controller */
+
+Route::get('/admin/actions', 'AdminController@actions')->name('admin-actions'); 
+Route::get('/admin/reports', 'AdminController@getReports')->name('admin-get-reports'); 

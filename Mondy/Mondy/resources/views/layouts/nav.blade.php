@@ -4,7 +4,7 @@
 
             <div class="container">
                 <!-- <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'MOndy') }}
+                    {{ config('app.name', 'Mondy') }}
                 </a> ! -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -46,11 +46,11 @@
                      </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="">Actions</a>
+                        <a class="nav-link" href="{{route('admin-actions')}}">Actions</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="">Reports</a>
+                        <a class="nav-link" href="{{route('admin-get-reports')}}">Reports</a>
                     </li>
                     </ul>
 
