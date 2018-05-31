@@ -1,1 +1,4 @@
-This also works perfectly man!
+@extends('layouts.app')
+@section('title')
+    Reports
+@endsection
