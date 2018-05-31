@@ -1,8 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a href="#" class="navbar-left"><img  style="max-width:100px; margin-top: -7px;" src="http://mondy78.com/mondy-logo.png"></a>
 
-<a href="#" class="navbar-left"><img src="C:\Users\ASUS\Desktop\E-Commerce-Solution\Mondy\Mondy\storage\app\public\blur_edges.jpg"></a>
-
-<!-- <a class="navbar-brand" href="#"><img src="C:\Users\ASUS\Desktop\E-Commerce-Solution\Mondy\Mondy\storage\app\public\blur_edges.jpg"><small>Mondy</small></a> -->
             <div class="container">
                 <!-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'MOndy') }}
@@ -13,11 +12,15 @@
                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    
+                @auth
+                @if(Auth()->user()->type == 'customer' )               
+
                     <ul class="navbar-nav mr-auto">
 
                      <li class="nav-item">
                     <a class="nav-link" href="">Home</a>
-                   </li>
+                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="">About Us</a>
@@ -33,6 +36,24 @@
                     </li>
 
                     </ul>
+                @else
+                <ul class="navbar-nav mr-auto">
+
+                     <li class="nav-item">
+                    <a class="nav-link" href="">Dashboard</a>
+                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Actions</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Reports</a>
+                    </li>
+                    </ul>
+
+                @endif    
+                 @endauth
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
