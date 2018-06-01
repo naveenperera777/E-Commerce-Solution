@@ -43,14 +43,14 @@
           <div class="row">
                 <div class="col-md-6">
                     <div class="card">
-                        <div class="card-header">
-                            <strong>Products</strong>
+                        <div class="card-header" style="background-color:black;">
+                            <strong style="color:aliceblue">Products</strong>
                         </div>
                         <div class="card-body">
                             <div class="list-group">
-                                <a href="#" class="list-group-item list-group-item-action">Add A New Item</a>
+                            <a href="{{route('admin-add-new-product')}}" class="list-group-item list-group-item-action">Add A New Product</a>
                             </div>
-            
+                                                                  
                             <div class="list-group">
                                 <a href="#" class="list-group-item list-group-item-action">Edit An Existing Item</a>
                             </div>

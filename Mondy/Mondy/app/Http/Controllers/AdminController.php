@@ -17,4 +17,12 @@ class AdminController extends Controller
         return view('Administrator.getReports');
     }
 
+    public function addProduct(){
+
+        return view('Administrator.addProduct');
+
+
+    }
+
+
 }

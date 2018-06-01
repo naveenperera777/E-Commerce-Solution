@@ -25,4 +25,6 @@ Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 /**Administrator Controller */
 
 Route::get('/admin/actions', 'AdminController@actions')->name('admin-actions'); 
-Route::get('/admin/reports', 'AdminController@getReports')->name('admin-get-reports'); 
+Route::get('/admin/reports', 'AdminController@getReports')->name('admin-get-reports');  
+#Add a new item
+Route::get('/admin/add-new-product', 'AdminController@addProduct')->name('admin-add-new-product'); 
