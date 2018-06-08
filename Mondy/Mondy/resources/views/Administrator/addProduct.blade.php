@@ -23,7 +23,8 @@ Add A Product
           Looks good!
         </div>
       </div>
-      {{-- <div class="col-md-4 mb-3">
+
+       <div class="col-md-4 mb-3">
         <label for="validationCustomUsername">Username</label>
         <div class="input-group">
           <div class="input-group-prepend">
@@ -40,24 +41,29 @@ Add A Product
 
     <div class="form-row">
             <div class="col-md-4 mb-3">
-                    <label for="validationCustom04">Brand</label>
-                  <select class="custom-select" required>               
-                    <option value="">Select a Brand</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <label for="brand">Brand</label>
+                  <select class="custom-select" name="brand" required>               
+                    <option>Select a Brand</option>
+                    <option>Armani</option>
+                    <option>Gucci</option>
+                    <option>Dolce & Gabbana</option>
+                    <option>Versace</option>
+                    <option>Louis Vuitton</option>
+                    <option>Victoria's Secret</option>
                   </select>
                   <div class="invalid-feedback">Example invalid custom select feedback</div>
                 </div>
 
 
       <div class="col-md-4 mb-3">
-          <label for="validationCustom04">Categoty</label>
-        <select class="custom-select" required>               
-          <option value="">Select a Categoty</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <label for="category">Categoty</label>
+        <select class="custom-select" name="category" required>               
+          <option>Select a Categoty</option>
+          <option>Tops</option>
+          <option>Jeans</option>
+          <option>Lingerie</option>
+          <option>Dresses</option>
+          <option>Pants</option>
         </select>
         <div class="invalid-feedback">Example invalid custom select feedback</div>
       </div>
@@ -77,14 +83,14 @@ Add A Product
           <div class="form-row">
                 <div class="col-md-4 mb-3">
                   <label for="validationCustom01">Price</label>
-                  <input type="text" class="form-control" id="validationCustom01" placeholder="Price"  required>
+                  <input type="text" class="form-control" id="price" name="price" placeholder="Price"  required>
                   <div class="valid-feedback">
                     Looks good!
                   </div>
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="validationCustom02">Available Quantity</label>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="Quantity" required>
+                  <input type="text" class="form-control" id="qty" name="qty" placeholder="Quantity" required>
                   <div class="valid-feedback">
                     Looks good!
                   </div>
@@ -96,26 +102,36 @@ Add A Product
     <label for="validationCustom04">Sizes Available &nbsp</label>        
 
     <label class="checkbox-inline">
-            <input type="checkbox" value="">XS &nbsp
+            <input type="checkbox" name="size[]" id="size" value="XS">XS &nbsp
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" value="">S &nbsp
+            <input type="checkbox" name="size[]" id="size"  value="S">S &nbsp
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" value="">M &nbsp
+            <input type="checkbox" name="size[]" id="size"  value="M">M &nbsp
           </label>
           <label class="checkbox-inline">
-                <input type="checkbox" value="">L &nbsp
+                <input type="checkbox" name="size[]" id="size"  value="L">L &nbsp
             </label><label class="checkbox-inline">
-                    <input type="checkbox" value="">XL &nbsp
+                    <input type="checkbox"name="size[]" id="size"  value="XL">XL &nbsp
             </label><label class="checkbox-inline">
-                <input type="checkbox" value="">XXL &nbsp
+                <input type="checkbox" name="size[]" id="size"  value="XXL">XXL &nbsp
                 </label>
             
             <div class="invalid-feedback">Example invalid custom select feedback</div>
         
-     </div> --}} <br>
+     </div> <br>
      <div class="form-row">
+
+     {{-- <div class="form-group"> --}}
+        <label for="exampleFormControlTextarea1">Product Description</label>
+        <textarea class="form-control" id="description" name="description" rows="3" cols="10"></textarea>
+      {{-- </div> --}}
+
+     </div> <br>
+
+     <div class="form-row">
+     
             <div class="custom-file">
                     <input type="file" class="custom-file-input" id="attachment" name="attachment">
                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
@@ -123,9 +139,9 @@ Add A Product
                 </div><br>
           
      
-  <button class="btn btn-primary" type="submit">Submit form</button>
+  <button class="btn btn-primary" type="submit">Add Product</button>
 </form>
-  <script>
+  {{-- <script>
   // Example starter JavaScript for disabling form submissions if there are invalid fields
   (function() {
     'use strict';
@@ -144,7 +160,7 @@ Add A Product
       });
     }, false);
   })();
-  </script>
+  </script> --}}
 
 
 </div>

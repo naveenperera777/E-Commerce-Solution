@@ -27,53 +27,49 @@ class AdminController extends Controller
 
     public function storeProduct(Request $request){
 
+		// dd($request->size);
+
         if ( $request->has( 'attachment' ) ) {
 
 			$fileNameWithExt = $request->file( 'attachment' )->getClientOriginalName();
 			$fileName        = pathinfo( $fileNameWithExt, PATHINFO_FILENAME );
 			// $courseID        = $course->course_id;
 			// $assignmentID    = $assignment->assignment_id;
-			$path            = 'public/storage/Admin Uploads/Product Uploads/';
+			$path            = 'public/storage/Admin Uploads/Product Uploads';
 
 			$request->file( 'attachment' )->storeAs( $path, $fileNameWithExt );
 
-		// return dd($request->productname);
-
+		
 		$storeProduct = new Product();
 		$storeProduct->name =$request->productname;
 		$storeProduct->product_id =$request->productid;
+		$storeProduct->brand =$request->brand;
+		$storeProduct->category =$request->category;
+		$storeProduct->price =$request->price;
+		$storeProduct->Quantity =$request->qty;
+		$storeProduct->description =$request->description;
+		$storeProduct->size =$request->size[1];
 		$storeProduct->attachment=$fileName;
 		$storeProduct->save();
 
-		}
+		} else {
 
-		// 	$storeProduct->name    = $request->productname;
-		// 	$submitAssignment->course_id     = $courseid;
-		// 	$submitAssignment->assignment_id = $assignmentid;
-		// 	$submitAssignment->title         = $request->title;
-		// 	$submitAssignment->description   = $request->description;
-		// 	$submitAssignment->attachment    = $fileName;
-		// 	$submitAssignment->save();
-		// } else {
-
-		// 	$storeProduct = new Product();
-		// 	$storeProduct->name    = $request->productname;
-
-		// 	$submitAssignment                = AssignmentSubmission::find( $assignmentid );
-		// 	$submitAssignment->student_id    = $student->id;
-		// 	$submitAssignment->course_id     = $courseid;
-		// 	$submitAssignment->assignment_id = $assignmentid;
-		// 	$submitAssignment->title         = $request->title;
-		// 	$submitAssignment->description   = $request->description;
-		// 	$submitAssignment->attachment    = null;
-		// 	$submitAssignment->save();
-
-		// }
-            // $a = $request->validationCustom01;
+		
+			$storeProduct = new Product();
+			$storeProduct->name =$request->productname;
+			$storeProduct->product_id =$request->productid;
+			$storeProduct->brand =$request->brand;
+			$storeProduct->category =$request->category;
+			$storeProduct->price =$request->price;
+			$storeProduct->Quantity =$request->qty;
+			$storeProduct->description =$request->description;
+			$storeProduct->size =$request->size[1];
+			$storeProduct->attachment=$fileName;
+			$storeProduct->save();
            
-        // return $a;
+        return redirect (route('admin-add-new-product'));
 
-
+		}
 		}
 
 
