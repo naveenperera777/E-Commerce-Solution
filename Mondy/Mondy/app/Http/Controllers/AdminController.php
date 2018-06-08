@@ -27,21 +27,25 @@ class AdminController extends Controller
 
     public function storeProduct(Request $request){
 
-        // if ( $request->has( 'attachment' ) ) {
+        if ( $request->has( 'attachment' ) ) {
 
-		// 	$fileNameWithExt = $request->file( 'attachment' )->getClientOriginalName();
-		// 	$fileName        = pathinfo( $fileNameWithExt, PATHINFO_FILENAME );
-		// 	$courseID        = $course->course_id;
-		// 	$assignmentID    = $assignment->assignment_id;
-		// 	$path            = 'public/Admin Uploads/Product Uploads/' . $courseID . '/' . $assignmentID;
+			$fileNameWithExt = $request->file( 'attachment' )->getClientOriginalName();
+			$fileName        = pathinfo( $fileNameWithExt, PATHINFO_FILENAME );
+			// $courseID        = $course->course_id;
+			// $assignmentID    = $assignment->assignment_id;
+			$path            = 'public/storage/Admin Uploads/Product Uploads/';
 
-		// 	$request->file( 'attachment' )->storeAs( $path, $fileNameWithExt );
+			$request->file( 'attachment' )->storeAs( $path, $fileNameWithExt );
 
 		// return dd($request->productname);
 
 		$storeProduct = new Product();
 		$storeProduct->name =$request->productname;
+		$storeProduct->product_id =$request->productid;
+		$storeProduct->attachment=$fileName;
 		$storeProduct->save();
+
+		}
 
 		// 	$storeProduct->name    = $request->productname;
 		// 	$submitAssignment->course_id     = $courseid;
