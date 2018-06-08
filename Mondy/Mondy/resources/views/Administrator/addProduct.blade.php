@@ -5,24 +5,25 @@ Add A Product
 
 @section('content')<br>
 <div class="container">
-
-<form class="needs-validation" novalidate>
+  
+<form method="POST" action="{{route('admin-add-new-product')}}"  enctype="multipart/form-data" class="needs-validation" novalidate>
+  @csrf
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationCustom01">Product ID</label>
-        <input type="text" class="form-control" id="validationCustom01" placeholder="Product ID"  required>
+        <input type="text" class="form-control" id="productid" name="productid" placeholder="Product ID"  required>
         <div class="valid-feedback">
           Looks good!
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationCustom02">Product Name</label>
-        <input type="text" class="form-control" id="validationCustom02" placeholder="Product Name" required>
+        <input type="text" class="form-control" id="productname" name="productname" placeholder="Product Name" required>
         <div class="valid-feedback">
           Looks good!
         </div>
       </div>
-      <div class="col-md-4 mb-3">
+      {{-- <div class="col-md-4 mb-3">
         <label for="validationCustomUsername">Username</label>
         <div class="input-group">
           <div class="input-group-prepend">
@@ -92,31 +93,31 @@ Add A Product
 
     <div class="form-row">
             
-    <label for="validationCustom04">Sizes Available</label>        
+    <label for="validationCustom04">Sizes Available &nbsp</label>        
 
     <label class="checkbox-inline">
-            <input type="checkbox" value="">XS 
+            <input type="checkbox" value="">XS &nbsp
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" value="">S
+            <input type="checkbox" value="">S &nbsp
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" value="">M
+            <input type="checkbox" value="">M &nbsp
           </label>
           <label class="checkbox-inline">
-                <input type="checkbox" value="">L
+                <input type="checkbox" value="">L &nbsp
             </label><label class="checkbox-inline">
-                    <input type="checkbox" value="">XL
+                    <input type="checkbox" value="">XL &nbsp
             </label><label class="checkbox-inline">
-                <input type="checkbox" value="">XXL
+                <input type="checkbox" value="">XXL &nbsp
                 </label>
-           
-            {{-- <div class="invalid-feedback">Example invalid custom select feedback</div> --}}
+            
+            <div class="invalid-feedback">Example invalid custom select feedback</div>
         
-     </div>
+     </div> --}} <br>
      <div class="form-row">
             <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                    <input type="file" class="custom-file-input" id="attachment" name="attachment">
                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                   </div>
                 </div><br>

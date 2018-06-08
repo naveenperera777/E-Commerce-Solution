@@ -28,3 +28,4 @@ Route::get('/admin/actions', 'AdminController@actions')->name('admin-actions');
 Route::get('/admin/reports', 'AdminController@getReports')->name('admin-get-reports');  
 #Add a new item
 Route::get('/admin/add-new-product', 'AdminController@addProduct')->name('admin-add-new-product'); 
+Route::post('/admin/add-new-product', 'AdminController@storeProduct')->name('admin-add-new-product'); 
