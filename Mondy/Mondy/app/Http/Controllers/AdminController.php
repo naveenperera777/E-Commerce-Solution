@@ -33,6 +33,8 @@ class AdminController extends Controller
 
 			$fileNameWithExt = $request->file( 'attachment' )->getClientOriginalName();
 			$fileName        = pathinfo( $fileNameWithExt, PATHINFO_FILENAME );
+			$extension =  $request->file( 'attachment' )->getClientOriginalExtension();
+			// dd($extension);
 			// $courseID        = $course->course_id;
 			// $assignmentID    = $assignment->assignment_id;
 			$path            = 'public/storage/Admin Uploads/Product Uploads';
@@ -48,8 +50,9 @@ class AdminController extends Controller
 		$storeProduct->price =$request->price;
 		$storeProduct->Quantity =$request->qty;
 		$storeProduct->description =$request->description;
-		$storeProduct->size =$request->size[1];
+		// $storeProduct->size =$request->size[5];
 		$storeProduct->attachment=$fileName;
+		$storeProduct->ext=$extension;
 		$storeProduct->save();
 
 		} else {
@@ -67,9 +70,11 @@ class AdminController extends Controller
 			$storeProduct->attachment=$fileName;
 			$storeProduct->save();
            
-        return redirect (route('admin-add-new-product'));
+       
 
 		}
+		return redirect (route('admin-add-new-product'));
+
 		}
 
 
