@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,11 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('dashboards/home');
+            $products = Product::all();
+
+            // dd($products);
+
+        return view('dashboards/home',['products'=>$products]);
     }
     public function dashboard()
     {

@@ -1,21 +1,26 @@
 @extends('layouts.app')
 
-@section('content')
+@section('content')<br>
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center"> 
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-                    <!-- @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
+            {{-- {{dd($products)}} --}}
+
+            @foreach($products as $product)
+            
+                <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="C:\Users\ASUS\Desktop\E-Commerce-Solution\Mondy\Mondy\storage\app\public\blur_edges.jpg" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">{{$product->name}}</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
-                    @endif -->
+                      </div>
 
-                    You are logged in!
-                </div>
+                      @endforeach
+
+
             </div>
         </div>
     </div>
