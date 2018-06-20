@@ -29,3 +29,8 @@ Route::get('/admin/reports', 'AdminController@getReports')->name('admin-get-repo
 #Add a new item
 Route::get('/admin/add-new-product', 'AdminController@addProduct')->name('admin-add-new-product'); 
 Route::post('/admin/add-new-product', 'AdminController@storeProduct')->name('admin-add-new-product'); 
+
+/**Customer COntroller */
+
+#view Item
+Route::get('/customer/view-product', 'ProductController@viewProduct')->name('customer-view-product'); 
