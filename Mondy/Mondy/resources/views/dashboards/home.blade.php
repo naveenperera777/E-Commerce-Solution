@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')<br>
 <div class="container-fluid content-row">
         
@@ -13,7 +12,7 @@
                         <div class="card-body">
                         <h5 class="card-title">{{$product->name}}</h5>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="{{route('customer-view-product')}}" class="btn btn-primary">Shop</a>
+                        <a href="{{route('customer-view-product',['id' => $product->id])}}" class="btn btn-primary">Shop</a>
                           
                         </div>
                       </div>

@@ -33,4 +33,4 @@ Route::post('/admin/add-new-product', 'AdminController@storeProduct')->name('adm
 /**Customer COntroller */
 
 #view Item
-Route::get('/customer/view-product', 'ProductController@viewProduct')->name('customer-view-product'); 
+Route::get('/customer/view-product/{id}', 'ProductController@viewProduct')->name('customer-view-product'); 
