@@ -10,7 +10,13 @@
                     {{-- <img src="storage\storage\Admin Uploads\Product Uploads\top.jpg" /> --}}
                     {{-- <img src="C:\Users\ASUS\Desktop\E-Commerce-Solution\Mondy\Mondy\public\storage\storage\Admin Uploads\Product Uploads\top.jpg"> --}}
                     <div class="preview-pic tab-content">
+                        @if($product->name=='Top')
                       <div class="tab-pane active" id="pic-1"><img src="https://sslimages1.shoppersstop.com/B8AC9759D45547D9AEF177F0DE13B7C8/img/FCC31746DDA64A439BC19211908B480E/203986279_9126_FCC31746DDA64A439BC19211908B480E.jpg" /></div>
+                      @elseif($product->name=='Jeans')
+                      <div class="tab-pane active" id="pic-1"><img src="https://media.missguided.com/s/missguided/G1801183_set/1/vaquero-vice-pitillo-de-tiro-alto-entrelazado-frontal-revestido-en-negro.jpg?%24shop-the-look__product-image--std%24" /></div>
+                      @elseif($product->name=='Dress')
+                      <div class="tab-pane active" id="pic-1"><img src="https://cdn.joules.com/medias/sys_master/cdn/h17/hf0/9247060262942.jpg" /></div>
+                      @endif
                       {{-- <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
                       <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
                       <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
